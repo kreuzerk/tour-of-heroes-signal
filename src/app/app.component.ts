@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
+import {RouterLink, RouterOutlet} from "@angular/router";
+import {HeaderComponent} from "./core/header/header.component";
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+      <toh-header/>
+      <section class="p-4">
+          <router-outlet></router-outlet>
+      </section>
+  `,
+  imports: [
+    RouterLink,
+    RouterOutlet,
+    HeaderComponent
+  ],
 })
 export class AppComponent {
-  title = 'tour-of-heroes-signal';
 }
